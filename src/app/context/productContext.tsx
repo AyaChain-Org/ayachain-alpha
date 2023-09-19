@@ -6,7 +6,7 @@ import { Address, getContract } from 'viem';
 import {AyaChainAbi} from './AyaChainAbi';
 import {NFTStorage, File} from 'nft.storage';
 
-const AyaChainAddress = "0xF18320CCC06598e5496B7f3F57f33B6CaEf41686";
+const AyaChainAddress = "0xd086dAB59F3d183b77c14E6FbbacC421adCD1634";
 
 export interface ProductInfo {
     id?: number,
