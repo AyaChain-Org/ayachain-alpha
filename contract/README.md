@@ -4,7 +4,7 @@ AyaChain is a Solidity smart contract designed for supply chain management. It e
 
 ## Deployed contract address
 
-
+[0xd086dAB59F3d183b77c14E6FbbacC421adCD1634](https://scan.pegotest.net/address/0xd086dAB59F3d183b77c14E6FbbacC421adCD1634/)
 
 ## Table of Contents
 
