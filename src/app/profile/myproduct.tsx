@@ -3,74 +3,30 @@
 
 import React, { useState } from 'react';
 import { useAccount } from 'wagmi';
-import Link from 'next/link';
 import CustomButton from '../components/common/button';
-import { ProductInfo, useProductContext } from '../context/productContext';
+import { IProductInfo, useProductContext } from '../context/productContext';
+import { UpdateModal } from '../components/updateModal';
 
 const MyProduct: React.FC = () => {
     const { address } = useAccount();
     const { products } = useProductContext();
-    const [location, setLocation] = useState('');
-    const [condition, setCondition] = useState('');
+    const [modalType, setModalType] = useState<'ship' | 'update' | 'deliver'>('update');
+    const [productToUpdate, setProductToUpdate] = useState<IProductInfo>(products[0]);
+    const [updateModalActive, setUpdateModalActive] = useState(false);
 
-    const {shipProduct, updateProduct, deliverProduct} = useProductContext();
-
-    const handleShipProduct = async(product: ProductInfo) => {
-        if(location && condition) {
-            try {
-                await shipProduct(product, location, condition);
-                //handleSuccess
-                // Show success notification
-                setLocation('');
-                setCondition('');
-            } catch (error) {
-                //handleError
-            }
-        }
-        else {
-            // Error
-            // Location and condition must be provided
-        }
+    const closeUpdateModal = () => {
+        setUpdateModalActive(false);
     }
 
-    const handleUpdateProduct = async(product: ProductInfo) => {
-        if(location && condition) {
-            try {
-                await updateProduct(product, location, condition);
-                //handleSuccess
-                // Show success notification
-                setLocation('');
-                setCondition('');
-            } catch (error) {
-                //handleError
-            }
-        }
-        else {
-            // Error
-            // Location and condition must be provided
-        }
-    }
-
-    const handleDeliverProduct = async(product: ProductInfo) => {
-        if(condition) {
-            try {
-                await deliverProduct(product, condition);
-                //handleSuccess
-                // Show success notification
-                setLocation('');
-                setCondition('');
-            } catch (error) {
-                //handleError
-            }
-        }
-        else {
-            // Error
-            // Condition must be provided
-        }
+    const openUpdateModal = (modalType: 'ship' | 'update' | 'deliver', product: IProductInfo) => {
+        setModalType(modalType);
+        setProductToUpdate(product);
+        setUpdateModalActive(true);
     }
 
     return (
         <div className='flex flex-col pt-8 pl-8'>
+            {updateModalActive && <UpdateModal product={productToUpdate} modalType={modalType} onClose={closeUpdateModal}/>}
             <div className='font-bold text-md'>
                 {address ?
                     `My Products`
@@ -97,7 +53,7 @@ const MyProduct: React.FC = () => {
                             </div>
                             <div className='between text-[14px]'>
                                 <p className='text-[14px] break-all'>Receiver&rsquo;s Address:</p>
-                                <a href={`https://goerli.basescan.org/address/${product.receiversAddress}`} target='_blank'>
+                                <a href={`https://scan.pegotest.net/address/${product.receiversAddress}`} target='_blank'>
                                 {
                                     address == product.receiversAddress ?
                                     <span className='font-semibold text-blue'>you</span> :
@@ -116,18 +72,10 @@ const MyProduct: React.FC = () => {
                                 </div>
                                 { product.intermediariesWallet == address &&
                                     <div className='w-full border-[#0000001A] border-t py-3 mt-3'>
-                                        <div className="flex">
-                                        <div className='flex rounded-lg w-[48.5%] flex-col gap-3 border border-[#0000001A] px-[20px] py-[10px] mb-3 mr-3'>
-                                            <input type="text" name="name" id="name" placeholder='Location' className='outline-none text-black text-[16px] font-semibold leading-[16px]' value={location} onChange={(e) => setLocation(e.target.value)} />
-                                        </div>
-                                        <div className='flex rounded-lg w-[48.5%] flex-col gap-3 border border-[#0000001A] px-[20px] py-[10px] mb-3'>
-                                            <input type="text" name="name" id="name" placeholder='Condition' className='outline-none text-black text-[16px] font-semibold leading-[16px]' value={condition} onChange={(e) => setCondition(e.target.value)} />
-                                        </div>
-                                        </div>
                                         { product.status == "Created" ?
-                                            <CustomButton onClick={() => handleShipProduct(product)} background='#2F7AEA' borderRadius='8px' textColor='#fff'>Ship product</CustomButton>
+                                            <CustomButton onClick={() => openUpdateModal('ship', product)} background='#2F7AEA' borderRadius='8px' textColor='#fff'>Ship product</CustomButton>
                                             :
-                                            <CustomButton onClick={() => handleUpdateProduct(product)} background='#2F7AEA' borderRadius='8px' textColor='#fff'>Update product</CustomButton>
+                                            <CustomButton onClick={() => openUpdateModal('update', product)} background='#2F7AEA' borderRadius='8px' textColor='#fff'>Update product</CustomButton>
                                         }
                                     </div>
                                 }
@@ -142,8 +90,7 @@ const MyProduct: React.FC = () => {
                     </p>
                 </div>
             )}
-        </div>
-    );
+        </div>);
 };
 
 export default MyProduct;

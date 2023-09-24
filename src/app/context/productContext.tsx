@@ -8,7 +8,7 @@ import {NFTStorage, File} from 'nft.storage';
 
 const AyaChainAddress = "0xd086dAB59F3d183b77c14E6FbbacC421adCD1634";
 
-export interface ProductInfo {
+export interface IProductInfo {
     id?: number,
     businessName: string;
     receiversAddress: Address;

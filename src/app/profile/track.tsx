@@ -5,12 +5,12 @@ import React, { useState } from 'react';
 import { useAccount, useBalance } from 'wagmi';
 import CustomButton from '../components/common/button';
 import { IProductHistory, useProductContext } from '../context/productContext';
-import { ProductInfo } from '../context/productContext';
+import { IProductInfo } from '../context/productContext';
 
 
 const Track: React.FC = () => {
     const [inputValue, setInputValue] = useState('');
-    const [trackedProducts, setTrackedProducts] = useState<ProductInfo[]>([]);
+    const [trackedProducts, setTrackedProducts] = useState<IProductInfo[]>([]);
     const [productHistory, setProductHistory] = useState<IProductHistory[]>([]);
     const [productDetails, setProductDetails] = useState(false)
     const { address } = useAccount()
@@ -79,7 +79,7 @@ const Track: React.FC = () => {
                         <div className='relative'>
                             {trackedProducts && trackedProducts.length > 0 && (
                                 <div className="flex gap-3 flex-wrap-reverse mt-10">
-                                    {trackedProducts.map((product: ProductInfo, index: any) => (
+                                    {trackedProducts.map((product: IProductInfo, index: any) => (
                                         <div key={index} className='bg-white rounded-[16px] border border-[#0000001A] flex-col flex w-[340px] p-4 text-[16px] gap-2'>
                                             {product.productImage && (
                                                 <img 
@@ -93,7 +93,7 @@ const Track: React.FC = () => {
                                             </div>
                                             <div className='between text-[14px]'>
                                                 <p className='text-[14px] break-all'>Receiver&rsquo;s Address:</p>
-                                                <a href={`https://goerli.basescan.org/address/${product.receiversAddress}`} target='_blank'>
+                                                <a href={`https://scan.pegotest.net/address/${product.receiversAddress}`} target='_blank'>
                                                     <span className='font-semibold text-blue'>{product.receiversAddress.slice(0, 6)}..</span>
                                                 </a>
                                             </div>
@@ -116,7 +116,7 @@ const Track: React.FC = () => {
                             )}
                             {productDetails && trackedProducts.length > 0 && (
                                 <div className="absolute w-full h-full top-0 my-10 bg-white border border-[#0000001A] mb-20 rounded-[12px] center">
-                                    {trackedProducts.map((product: ProductInfo, index: any) => (
+                                    {trackedProducts.map((product: IProductInfo, index: any) => (
                                         <div key={index} className='w-full h-full flex justify-between p-4'>
                                             <div className='w-[40%] flex-col flex text-[16px] gap-2'>
                                                 {product.productImage && (

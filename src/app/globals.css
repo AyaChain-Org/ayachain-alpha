@@ -240,3 +240,25 @@ html, body {
     background-color: transparent;
   }
 }
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the alpha (0.5) for transparency */
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 473px;
+  max-width: 80%;
+  max-height: 80%;
+}
