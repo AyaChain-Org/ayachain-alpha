@@ -32,10 +32,10 @@ export interface IProductHistory {
 
 interface ProductContextType {
     products: IProductInfo[];
-    addProduct: (product: ProductInfo) => void;
-    shipProduct: (product: ProductInfo, location: string, condition: string) => void;
-    updateProduct: (product: ProductInfo, location: string, condition: string) => void;
-    deliverProduct: (product: ProductInfo, condition: string) => void;
+    addProduct: (product: IProductInfo) => void;
+    shipProduct: (product: IProductInfo, location: string, condition: string) => void;
+    updateProduct: (product: IProductInfo, location: string, condition: string) => void;
+    deliverProduct: (product: IProductInfo, condition: string) => void;
     getProductHistory: (productId: number) => Promise<IProductHistory[]>;
 }
 
@@ -48,7 +48,7 @@ interface ProductProviderProps {
 export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
     const [walletClient, setWalletClient] = useState<WalletClient>();
 
-    const [products, setProducts] = useState<ProductInfo[]>([]);
+    const [products, setProducts] = useState<IProductInfo[]>([]);
     const publicClient = usePublicClient();
     useWalletClient({
         onSuccess(data) {
@@ -100,7 +100,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) =>
         const res = await contract.read.getProducts();
         const userAddress = walletClient?.account.address;
         const userProducts = res.filter((p) => (p.intermediary == userAddress || p.distributor == userAddress || p.customer == userAddress));
-        const _products: ProductInfo[] = [];
+        const _products: IProductInfo[] = [];
         for(let i = 0; i < userProducts.length; i++) {
             const _product = userProducts[i];
             const status = _product.state == 0 ? "Created" : _product.state == 1 ? "Shipped" : "Delivered"; 
@@ -122,7 +122,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) =>
     }
     
       
-    const addProduct = async(product: ProductInfo) => {
+    const addProduct = async(product: IProductInfo) => {
         const contract = getContract({
             address: AyaChainAddress,
             abi: AyaChainAbi,
@@ -142,7 +142,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) =>
         getUserProducts();
     };
 
-    const shipProduct = async(product: ProductInfo, location: string, condition: string) => {
+    const shipProduct = async(product: IProductInfo, location: string, condition: string) => {
         const contract = getContract({
             address: AyaChainAddress,
             abi: AyaChainAbi,
@@ -163,7 +163,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) =>
         }
     };
 
-    const updateProduct = async(product: ProductInfo, location: string, condition: string) => {
+    const updateProduct = async(product: IProductInfo, location: string, condition: string) => {
         const contract = getContract({
             address: AyaChainAddress,
             abi: AyaChainAbi,
@@ -182,7 +182,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) =>
         }
     };
 
-    const deliverProduct = async(product: ProductInfo, condition: string) => {
+    const deliverProduct = async(product: IProductInfo, condition: string) => {
         const contract = getContract({
             address: AyaChainAddress,
             abi: AyaChainAbi,
