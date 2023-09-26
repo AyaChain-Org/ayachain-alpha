@@ -31,7 +31,7 @@ export interface IProductHistory {
 }
 
 interface ProductContextType {
-    products: ProductInfo[];
+    products: IProductInfo[];
     addProduct: (product: ProductInfo) => void;
     shipProduct: (product: ProductInfo, location: string, condition: string) => void;
     updateProduct: (product: ProductInfo, location: string, condition: string) => void;
