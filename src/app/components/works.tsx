@@ -14,7 +14,7 @@ const Works: React.FC = () => {
     return (
         <div className='flex-col center gap-16 w-full md:h-[550px] mt-10 py-10 bg-black relative overflow-hidden'>
             <div className="center">
-                <CustomButton onClick={() => {}} background='#1E1E1E' textColor='#FFFFFF' textSize=".8rem" borderRadius="25px" border="1px solid #8C8C8F">How AyaChain Works</CustomButton>
+                <CustomButton onClick={() => {}} background='#1E1E1E' textColor='#FFFFFF' textSize=".8rem" borderRadius="25px" border="1px solid #8C8C8F">How PegoTrack Works</CustomButton>
             </div>
 
             <div className='center md:gap-4 lg:gap-8 sm:gap-10 flex-wrap lg:w-10/12 md:w-[95%]'>

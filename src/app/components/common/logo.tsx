@@ -8,7 +8,7 @@ const Logo:React.FC = () => {
         <Link href="/">
             <div className="center gap-[0.5rem]">
                 <Image src="/images/logo.png" alt="logo" width={32} height={32} />
-                <p className="text-normal leading-[30px] font-semibold">AyaChain</p>
+                <p className="text-normal leading-[30px] font-semibold">PegoTrack</p>
             </div>
         </Link>
     );

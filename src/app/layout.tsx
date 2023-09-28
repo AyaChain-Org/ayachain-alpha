@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ayachain',
+  title: 'PegoTrack',
   description: 'Make Your Business Stronger with Authenticity and Transparency',
 }
 

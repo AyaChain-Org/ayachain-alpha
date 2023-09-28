@@ -33,7 +33,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 
 const { connectors } = getDefaultWallets({
-  appName: 'Ayachain',
+  appName: 'PegoTrack',
   projectId: '9904ebb190195acdcc552c331c1a8087',
   chains,
 });

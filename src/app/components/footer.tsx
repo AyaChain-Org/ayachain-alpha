@@ -15,7 +15,7 @@ const Footer:React.FC = () => {
                 </div>
                 <div className="flex md:flex-row flex-col gap-10">
                     <div className="w-full">
-                        <p>&copy; {currentYear} AyaChain. All Rights Reserved.</p>
+                        <p>&copy; {currentYear} PegoTrack. All Rights Reserved.</p>
                     </div>
                     <div className="center w-full z-10">
                         <ul className="flex w-full flex-col md:flex-row gap-5 capitalize font-medium">
