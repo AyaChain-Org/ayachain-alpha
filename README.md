@@ -6,7 +6,7 @@ This repository contains PegoTrack project developed with Next.js, TypeScript, T
 
 [Frontend](https://pegotrack.vercel.app)
 
-[Smart contract](https://scan.pego.network/address/)
+[Smart contract](https://scan.pego.network/address/0xd086dAB59F3d183b77c14E6FbbacC421adCD1634/)
 
 ## Table of Contents
 
