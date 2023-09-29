@@ -1,10 +1,10 @@
 # PegoTrack: Supply Chain Smart Contract
 
-PegoTrack is a Solidity smart contract designed for supply chain management. It enables the tracking of product movements, conditions, and histories on the Ethereum blockchain. This README provides an overview of the project, instructions for setting up and deploying the contract using the Hardhat framework, and details on testing and contract usage.
+PegoTrack is a Solidity smart contract designed for supply chain management. It enables the tracking of product movements, conditions, and histories on the Pego blockchain. This README provides an overview of the project, instructions for setting up and deploying the contract using the Hardhat framework, and details on testing and contract usage.
 
 ## Deployed contract address
 
-[0xd086dAB59F3d183b77c14E6FbbacC421adCD1634](https://scan.pegotest.net/address/0xd086dAB59F3d183b77c14E6FbbacC421adCD1634/)
+[0xd086dAB59F3d183b77c14E6FbbacC421adCD1634](https://scan.pego.network/address/0xd086dAB59F3d183b77c14E6FbbacC421adCD1634/)
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ PegoTrack is a Solidity smart contract designed for supply chain management. It 
 
 ## Project Overview
 
-PegoTrack is a supply chain management smart contract that leverages the Ethereum blockchain to provide transparency and traceability for products. It uses Solidity, a smart contract programming language, and is designed to be deployed on the Ethereum network.
+PegoTrack is a supply chain management smart contract that leverages the pego blockchain to provide transparency and traceability for products. It uses Solidity, a smart contract programming language, and is designed to be deployed on the pego network.
 
 Key features of PegoTrack include:
 
@@ -50,7 +50,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Contract Deployment
 
-To deploy the PegoTrack contract to an Ethereum network using Hardhat:
+To deploy the PegoTrack contract to pego using Hardhat:
 
 1. Set environment variables
    Copy .env-example to .env
@@ -62,7 +62,7 @@ To deploy the PegoTrack contract to an Ethereum network using Hardhat:
 3. Run the deployment script:
 
    ```bash
-   npx hardhat run scripts/deploy.js --network base-goerli
+   npx hardhat run scripts/deploy.js --network pego
    ```
 
 ## Testing
@@ -77,10 +77,10 @@ The tests are defined in the `test` directory.
 
 ### Deploying
 
-Deploy contract to baseGoerli network
+Deploy contract to pego network
 
 ```bash
-npx hardhat run script/deploy.js --network pego-testnet
+npx hardhat run script/deploy.js --network pego
 ```
 
 ## Contract Functionality

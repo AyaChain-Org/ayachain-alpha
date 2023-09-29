@@ -7,12 +7,12 @@
 const hre = require("hardhat");
 
 async function main() {
-  const ayaChain = await hre.ethers.deployContract("AyaChain");
+  const pegoTrack = await hre.ethers.deployContract("PegoTrack");
 
-  await ayaChain.waitForDeployment();
+  await pegoTrack.waitForDeployment();
 
   console.log(
-    `AyaChain deployed to ${ayaChain.target}`
+    `PegoTrack deployed to ${pegoTrack.target}`
   );
 }
 

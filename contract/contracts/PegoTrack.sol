@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 
 /**
- * @title AyaChain: A supply chain smart contract for tracking product movements and conditions
+ * @title PegoTrack: A supply chain smart contract for tracking product movements and conditions
  */
-contract AyaChain {
+contract PegoTrack {
     enum ProductState {
         Created,
         Shipped,
