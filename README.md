@@ -1,34 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PegoTrack
+
+This repository contains PegoTrack project developed with Next.js, TypeScript, Tailwindcss and RainbowKit for the frontend, and Solidity, Hardhat, and Ethers.js for the smart contract on the backend.
+
+## Live urls
+
+[Frontend](https://pegotrack.vercel.app)
+
+[Smart contract](https://scan.pego.network/address/)
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+  - [Frontend](#frontend)
+  - [Smart Contract](#smart-contract)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Overview
+
+This project aims to demonstrate a supply chain management system using blockchain technology. The frontend provides a user interface to interact with the smart contract deployed on the pego blockchain. Users can connect their wallets (Metamask or WalletConnect), view product details, track their movements, and more.
+
+The smart contract facilitates the tracking of products, their states, and histories on the blockchain. It has been developed using Solidity and is deployed on pego blockchain.
+
+## Features
+
+- Wallet connection with Metamask and WalletConnect using RainbowKit.
+- Interact with the supply chain smart contract to add products, track their movements, and view histories.
+- Responsive and user-friendly UI built with Next.js and Tailwindcss.
+
+## Technologies Used
+
+### Frontend
+
+- Next.js: React framework for building the frontend.
+- TypeScript: Provides type checking for JavaScript.
+- RainbowKit: Library for handling wallet connections.
+- Tailwind: CSS library used for designing the UI.
+
+### Smart Contract
+
+- Solidity: Smart contract programming language.
+- Hardhat: Development environment for Ethereum with testing, debugging, and deployment tools.
+- Ethers.js: Library for interacting with Ethereum and smart contracts.
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/pegotrack/pego-track
+   cd ayachain
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install the dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Run the frontend development server:
 
-To learn more about Next.js, take a look at the following resources:
+   ```
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Interact with the frontend on localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Follow the instructions in the `contract` directory's README to deploy and interact with the smart contract.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Smart Contract (contracts/README.md)
+
+Please refer to the [contract/README.md](contract/README.md) for detailed information about the smart contract, deployment instructions, and interaction details.
