@@ -93,7 +93,7 @@ const Track: React.FC = () => {
                                             </div>
                                             <div className='between text-[14px]'>
                                                 <p className='text-[14px] break-all'>Receiver&rsquo;s Address:</p>
-                                                <a href={`https://scan.pegotest.net/address/${product.receiversAddress}`} target='_blank'>
+                                                <a href={`https://scan.pego.network/address/${product.receiversAddress}`} target='_blank'>
                                                     <span className='font-semibold text-blue'>{product.receiversAddress.slice(0, 6)}..</span>
                                                 </a>
                                             </div>
@@ -131,7 +131,7 @@ const Track: React.FC = () => {
                                                 </div>
                                                 <div className='between text-[14px]'>
                                                     <p className='text-[14px] break-all'>Receiver&rsquo;s Address:</p>
-                                                    <a href={`https://scan.pegotest.net/address/${product.receiversAddress}`} target='_blank'>
+                                                    <a href={`https://scan.pego.network/address/${product.receiversAddress}`} target='_blank'>
                                                         <span className='font-semibold text-blue'>{product.receiversAddress.slice(0, 6)}..</span>
                                                     </a>
                                                 </div>

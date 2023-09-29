@@ -53,7 +53,7 @@ const MyProduct: React.FC = () => {
                             </div>
                             <div className='between text-[14px]'>
                                 <p className='text-[14px] break-all'>Receiver&rsquo;s Address:</p>
-                                <a href={`https://scan.pegotest.net/address/${product.receiversAddress}`} target='_blank'>
+                                <a href={`https://scan.pego.network/address/${product.receiversAddress}`} target='_blank'>
                                 {
                                     address == product.receiversAddress ?
                                     <span className='font-semibold text-blue'>you</span> :

@@ -6,21 +6,21 @@ import { Chain, configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 
 export const pegoTestnet = {
-  id: 123_456,
+  id: 2020_1022,
   name: 'PEGO',
   network: 'pegochain',
   nativeCurrency: {
     decimals: 18,
-    name: 'Pego Test Token',
+    name: 'Pego Token',
     symbol: 'PG',
   },
   rpcUrls: {
-    public: { http: ['https://rpc.pegotest.net/'] },
-    default: { http: ['https://rpc.pegotest.net/'] },
+    public: { http: ['https://pegorpc.com/'] },
+    default: { http: ['https://pegorpc.com'] },
   },
   blockExplorers: {
-    etherscan: { name: 'PegoTestScan', url: 'https://scan.pegotest.net/' },
-    default: { name: 'PegoTestScan', url: 'https://scan.pegotest.net/' },
+    etherscan: { name: 'PegoScan', url: 'https://scan.pego.network' },
+    default: { name: 'PegoScan', url: 'https://scan.pego.network' },
   },
 } as const satisfies Chain
 
