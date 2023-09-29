@@ -54,7 +54,7 @@ To run the project locally, follow these steps:
 
    ```bash
    git clone https://github.com/pegotrack/pego-track
-   cd ayachain
+   cd pego-track
    ```
 
 2. Install the dependencies:
